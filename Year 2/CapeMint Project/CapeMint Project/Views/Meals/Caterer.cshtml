@@ -1,0 +1,534 @@
+﻿@model CapeMint_Project.Models.MealViewModel
+
+@{
+    ViewBag.Title = "Caterer";
+}
+
+<h2>Meal Agents - Caterers</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Register or Edit Caterer</h4>
+        <div class="row">
+            <div class="col">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Caterer.Cat_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Caterer.Cat_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Caterer.Cat_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Caterer.Cat_LName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Caterer.Cat_LName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Caterer.Cat_LName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Caterer.Cat_email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Caterer.Cat_email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Caterer.Cat_email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Caterer.Cat_phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Caterer.Cat_phone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Caterer.Cat_phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                Meal Services: <br />
+                <div class="form-check">
+                    <label class="form-check-label"><input class="form-check-input" type="checkbox" name="mealOptions" id=1 value="Regular"> Regular</label><br>
+                    <label class="form-check-label"><input class="form-check-input" type="checkbox" name="mealOptions" id=2 value="Vegan"> Vegan</label><br>
+                    <label class="form-check-label"><input class="form-check-input" type="checkbox" name="mealOptions" id=4 value="Kosher"> Kosher</label><br>
+                    <label class="form-check-label"><input class="form-check-input" type="checkbox" name="mealOptions" id=5 value="Indian"> Indian</label><br>
+                    <label class="form-check-label"><input class="form-check-input" type="checkbox" name="mealOptions" id=7 value="Keto"> Keto</label><br>
+                    <label class="form-check-label"><input class="form-check-input" type="checkbox" name="mealOptions" id=8 value="Paleo"> Paleo</label><br>
+                    <label class="form-check-label"><input class="form-check-input" type="checkbox" name="mealOptions" id=3 value="Halal"> Halal</label><br>
+                    <label class="form-check-label"><input class="form-check-input" type="checkbox" name="mealOptions" id=6 value="Gluten-free"> Gluten-free</label><br>
+                </div>
+
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Add" id="addCaterer" class="btn btn-light" />
+                <button class="btn" id="btnUpdate">Update</button>
+            </div>
+        </div>
+        <br />
+        <input type="search" placeholder="Search table" id="searchValue" />
+        <input type="button" class="btn btn-light" value="Find" onclick="search()" />
+        <br />
+    </div>
+}
+
+<div style="height: 300px; overflow-y: scroll;">
+    <table class="table table-condensed" id="catererTable">
+        <thead style="position: sticky; top: 0; background-color: lightgrey;">
+            <tr>
+                <th style="width: 15%;">Name + Surname</th>
+                <th style="width: fit-content;">Email</th>
+                <th style="width: fit-content;">Telephone</th>
+                <th style="width: fit-content;">Meal Services</th>
+                <th style="width: min-content"></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+
+@section Scripts {
+    <script async>
+        let rawCaterersList = [];
+        let currentRow;
+        let currentRowId;
+        let id;
+
+        $(document).ready(function () {
+            $("#nav-meals").prop("class", "nav-link active");
+
+            if (localStorage.row_Id) {
+                id = parseInt(localStorage.getItem("row_Id"), 10);
+                id++;
+                console.log(id);
+            } else {
+                id = 0;
+            }
+
+            const CatererTable = $("#catererTable tbody");
+
+            if (localStorage.caterers) {
+                rawCaterersList = JSON.parse(localStorage.getItem("caterers"));
+
+                rawCaterersList.forEach(function (caterer) {
+                    let selectedMealList = [];
+                    const CatererObj = caterer;
+                    const newRow = $("<tr>", { id: CatererObj.Cat_Id });
+
+                    // Add the data into the row
+                    newRow.append($("<td>", { id: 'names' }).text(CatererObj.Cat_FName + " " + CatererObj.Cat_LName));
+                    newRow.append($("<td>", { id: 'email' }).text(CatererObj.Cat_email));
+                    newRow.append($("<td>", { id: 'tel' }).text(CatererObj.Cat_Tel));
+
+                    CatererObj.Cat_MealServices.forEach(service => {
+                        const tempObj = JSON.parse(service);
+                        selectedMealList.push(tempObj.MealName);
+                    });
+
+                    newRow.append($("<td>", { id: 'mealServices' }).text(selectedMealList.toString()));
+                    newRow.append($("<td>").html('<button class="btn btn-light btnEdit">Edit</button><button class="btn btn-danger btnDel">Delete</button>'));
+
+                    CatererTable.append(newRow);
+                });
+            } else {
+                console.log("Document loaded with no caterers");
+            }
+        });
+
+        $("#btnUpdate").hide();
+
+        $("#addCaterer").click(function () {
+            const checkboxes = document.querySelectorAll('input[name="mealOptions"]:checked');
+            let checkedValues = [];
+            let checkedObjects = [];
+            const cat_Id = id++;
+            const name = $("#Caterer_Cat_Name").val();
+            const surname = $("#Caterer_Cat_LName").val();
+            const email = $("#Caterer_Cat_email").val();
+            const tele = $("#Caterer_Cat_phone").val();
+
+            checkboxes.forEach(function (checkbox) {
+                checkedObjects.push(JSON.stringify({ MealId: Number(checkbox.id), MealName: checkbox.value }));
+                checkedValues.push(checkbox.value);
+            });
+
+            if (checkedValues.length !== 0 && name && surname && tele) {
+                const jsonCaterer = { Cat_Id: cat_Id, Cat_FName: name, Cat_LName: surname, Cat_email: email, Cat_Tel: tele, Cat_MealServices: checkedObjects };
+
+                rawCaterersList.push(jsonCaterer);
+
+                const CatererTable = $("#catererTable tbody");
+                const newRow = $("<tr>", { id: cat_Id });
+
+                newRow.append($("<td>", { id: 'names' }).text(name + " " + surname));
+                newRow.append($("<td>", { id: 'email' }).text(email));
+                newRow.append($("<td>", { id: 'tel' }).text(tele));
+                newRow.append($("<td>", { id: 'mealServices' }).text(checkedValues.toString()));
+                newRow.append($("<td>").html('<button class="btn btn-light btnEdit">Edit</button><button class="btn btn-danger btnDel">Delete</button>'));
+
+                CatererTable.append(newRow);
+
+                $("#Caterer_Cat_Name").val("");
+                $("#Caterer_Cat_LName").val("");
+                $("#Caterer_Cat_email").val("");
+                $("#Caterer_Cat_phone").val("");
+                checkboxes.forEach(checkbox => { checkbox.checked = false; });
+
+                localStorage.setItem("caterers", JSON.stringify(rawCaterersList));
+                localStorage.setItem("row_Id", id);
+            } else {
+                alert("Please ensure you filled in all the form fields");
+            }
+        });
+
+        function search() {
+            const searchText = $("#searchValue").val().toLowerCase();
+            const CatererTable = $("#catererTable tbody");
+
+            CatererTable.empty();
+
+            if (searchText !== "") {
+                rawCaterersList.forEach(caterer => {
+                    if (caterer.Cat_FName.toLowerCase().includes(searchText) ||
+                        caterer.Cat_LName.toLowerCase().includes(searchText)) {
+
+                        let selectedMealList = [];
+                        const newRow = $("<tr>", { id: caterer.Cat_Id });
+
+                        newRow.append($("<td>", { id: 'names' }).text(caterer.Cat_FName + " " + caterer.Cat_LName));
+                        newRow.append($("<td>", { id: 'email' }).text(caterer.Cat_email));
+                        newRow.append($("<td>", { id: 'tel' }).text(caterer.Cat_Tel));
+
+                        caterer.Cat_MealServices.forEach(service => {
+                            const tempObj = JSON.parse(service);
+                            selectedMealList.push(tempObj.MealName);
+                        });
+
+                        newRow.append($("<td>", { id: 'mealServices' }).text(selectedMealList.toString()));
+                        newRow.append($("<td>").html('<button class="btn btn-light btnEdit">Edit</button><button class="btn btn-danger btnDel">Delete</button>'));
+
+                        CatererTable.append(newRow);
+                    }
+                });
+
+                if (CatererTable.children().length === 0) {
+                    alert("No matches found.");
+                }
+            } else {
+                alert("Please fill in the search bar before searching");
+            }
+        }
+
+        $(document).on("click", ".btnEdit", function () {
+            $("#btnUpdate").addClass("btn-danger").show();
+            currentRowId = $(this).closest("tr").prop("id");
+
+            currentRow = $(this).closest("tr");
+            const Caterer = rawCaterersList.find(caterer => caterer.Cat_Id == currentRowId);
+
+            Caterer.Cat_MealServices.forEach(service => {
+                const meal = JSON.parse(service);
+                $("#" + meal.MealId).prop("checked", true);
+            });
+
+            $("#Caterer_Cat_Name").val(Caterer.Cat_FName);
+            $("#Caterer_Cat_LName").val(Caterer.Cat_LName);
+            $("#Caterer_Cat_email").val(Caterer.Cat_email);
+            $("#Caterer_Cat_phone").val(Caterer.Cat_Tel);
+        });
+
+        $(document).on("click", "#btnUpdate", function (e) {
+            e.preventDefault();
+
+            const Caterer = rawCaterersList.find(caterer => caterer.Cat_Id == currentRowId);
+            const checkboxes = document.querySelectorAll('input[name="mealOptions"]:checked');
+            let checkedObjects = [];
+            let checkedValues = [];
+
+            Caterer.Cat_FName = $("#Caterer_Cat_Name").val();
+            Caterer.Cat_LName = $("#Caterer_Cat_LName").val();
+            Caterer.Cat_email = $("#Caterer_Cat_email").val();
+            Caterer.Cat_Tel = $("#Caterer_Cat_phone").val();
+
+            checkboxes.forEach(function (checkbox) {
+                checkedObjects.push(JSON.stringify({ MealId: checkbox.id, MealName: checkbox.value }));
+                checkedValues.push(checkbox.value);
+            });
+
+            Caterer.Cat_MealServices = checkedObjects;
+
+            const row = $("#" + currentRowId);
+            row.find('td').eq(0).text(Caterer.Cat_FName + " " + Caterer.Cat_LName);
+            row.find('td').eq(1).text(Caterer.Cat_email);
+            row.find('td').eq(2).text(Caterer.Cat_Tel);
+            row.find('td').eq(3).text(checkedValues.toString());
+
+            $("#Caterer_Cat_Name").val("");
+            $("#Caterer_Cat_LName").val("");
+            $("#Caterer_Cat_email").val("");
+            $("#Caterer_Cat_phone").val("");
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = false;
+            });
+
+            $(this).hide();
+            localStorage.setItem("caterers", JSON.stringify(rawCaterersList));
+            window.location.reload();
+        });
+
+        $('#catererTable').on('click', '.btnDel', function () {
+            const rowId = $(this).closest('tr').prop("id");
+            rawCaterersList = rawCaterersList.filter(caterer => caterer.Cat_Id != rowId);
+
+            $(this).closest('tr').remove();
+
+            localStorage.setItem("caterers", JSON.stringify(rawCaterersList));
+        });
+    </script>
+
+    @*<script async>
+            let rawCaterersList = [];
+            var currentRow ;
+            var currentRowId;
+            var id;
+            $(document).ready(function () {
+                $("#nav-meals").prop("class", "nav-link active");
+                if (localStorage.row_Id) {
+                    id = localStorage.getItem("row_Id");
+                    id = ++id;
+                    console.log(id);
+                } else { id = '0' };
+                var CatererTable = $("#catererTable tbody");
+
+                if (localStorage.caterers)
+                {
+
+                    rawCaterersList = [];
+                    //rawCaterersList.push(localStorage.getItem("caterers"));
+                    //console.log(rawCaterersList);
+                    rawCaterersList = JSON.parse(localStorage.getItem("caterers"));
+
+                    rawCaterersList.forEach(function (caterer) {
+                        let selectedMealList = [];
+                        var CatererObj = caterer;
+                        var newRow = $("<tr id=" + CatererObj.Cat_Id + "></tr>");
+
+                        //Add the data into the row
+                        newRow.append($("<td id='names'></td>").append(CatererObj.Cat_FName + " " + CatererObj.Cat_LName));
+                        newRow.append($("<td id='email'></td>").append(CatererObj.Cat_email));
+                        newRow.append($("<td id='tel'></td>").append(CatererObj.Cat_Tel));
+                        for (i = 0; i < CatererObj.Cat_MealServices.length; i++) {
+                            var tempObj = JSON.parse(CatererObj.Cat_MealServices[i])
+                            selectedMealList.push(tempObj.MealName);
+                        }
+                        newRow.append($("<td id='mealServices'></td>").append(selectedMealList.toString()));
+                        newRow.append($("<td></td").append('<button class="btn btn-light btnEdit">Edit</button><button class= "btn btn-danger btnDel"> Delete</button >'));
+                        CatererTable.append(newRow)
+                        rawCaterersList = JSON.stringify(rawCaterersList);
+                    })
+                    /*rawCaterersList.ForEach(function (caterer) {
+                        var CatererObj = JSON.parse(caterer);
+                        $("#Caterer_Cat_Name").val(CatererObj.Cat_FName); $("#Caterer_Cat_LName").val(CatererObj.Cat_LName);
+                        $("#Caterer_Cat_email").val(CatererObj.Cat_email); $("#Caterer_Cat_phone").val(CatererObj.Cat_Tel);
+
+                    });*/
+                }
+                else
+                {
+                    console.log("Document loaded with no caterers");
+                };
+
+            })
+            $("#btnUpdate").hide();
+            //ADDING STUFF TO THE TABLE
+            $("#addCaterer").click(function () {
+                var checkboxes = document.querySelectorAll('input[name="mealOptions"]:checked');
+                var checkedValues = [];
+                var checkedObjects = [];
+                var checkedObjectsV2 = [];
+                var cat_Id = id++;
+                var name = $("#Caterer_Cat_Name").val();
+                var surname = $("#Caterer_Cat_LName").val();
+                var email = $("#Caterer_Cat_email").val();
+                var tele = $("#Caterer_Cat_phone").val();
+                checkboxes.forEach(function (checkbox) {
+                    checkedObjects.push(JSON.stringify({ MealId: Number(checkbox.id), MealName: checkbox.value }));
+                    checkedObjectsV2.push({ MealId: Number(checkbox.id), MealName: checkbox.value });
+                    checkedValues.push(checkbox.value);
+                });
+
+                if (checkedValues.length != 0 && name != "" && surname != "" && tele != "")
+                {
+                    if (rawCaterersList.length !== 0) {
+                        if (JSON.parse(rawCaterersList) == rawCaterersList) { rawCaterersList = JSON.stringify(rawCaterersList) } else { rawCaterersList = JSON.parse(rawCaterersList) };
+                    }
+
+                    //
+                    var jsonCaterer = { Cat_Id: cat_Id, Cat_FName: name, Cat_LName: surname, Cat_email: email, Cat_Tel: tele, Cat_MealServices: checkedObjects };
+                    console.log("Before:\n", rawCaterersList);
+
+                    var checkedObjectsJson = JSON.stringify(checkedObjectsV2);
+                    $.post('@Url.Action("AddCaterer","Meals")', {
+                        Cat_Id: cat_Id, Cat_FName: name, Cat_LName: surname, Cat_email: email, Cat_Tel: tele,
+                        Cat_MealServices: checkedObjectsJson
+                    })
+
+                    rawCaterersList.push(jsonCaterer);
+                    console.log("After:\n", rawCaterersList);
+                    var CatererTable = $("#catererTable tbody");
+                    var newRow = $("<tr id="+cat_Id+"></tr>");
+                    /*var rawList = JSON.parse(rawCaterersList[0]);
+                    var selectedMealList = JSON.parse(rawList.Cat_MealServices[0])
+                    console.log(selectedMealList.MealName);*/
+
+                    //Add the data into the row
+                    newRow.append($("<td id='names'></td>").append(name +" "+ surname));
+                    newRow.append($("<td id='email'></td>").append(email));
+                    newRow.append($("<td id='tel'></td>").append(tele));
+                    newRow.append($("<td id='mealServices'></td>").append(checkedValues.toString()));
+                    newRow.append($("<td></td").append('<button class="btn btn-light btnEdit">Edit</button><button class= "btn btn-danger btnDel"> Delete</button >'));
+                    CatererTable.append(newRow)
+
+                    //Empty out the options
+                    $("#Caterer_Cat_Name").val(""); $("#Caterer_Cat_LName").val(""); $("#Caterer_Cat_email").val("");
+                    $("#Caterer_Cat_phone").val("");
+                    checkboxes.forEach(function (checkbox) {
+                       checkbox.checked = false;
+                    });
+                    rawCaterersList = JSON.stringify(rawCaterersList);
+                    localStorage.setItem("caterers", rawCaterersList);
+                    localStorage.setItem("row_Id", cat_Id);
+                }
+                else {
+                    alert("Please ensure you filled in all the form fields");
+                }
+            });
+
+            //SEARCH BTN
+            function search() {
+                // Get the search input value
+                var searchText = $("#searchValue").val();
+                if (searchText !== "") {
+                    // Get all the rows in the table
+                    var rows = document.querySelectorAll("#catererTable tr");
+                    for (let i = 1; i < rows.length; i++) {
+                        var a = rows[i].cells[0].innerHTML.toLowerCase();
+                        if (a.includes(searchText.toLowerCase())) {
+                            //rows[i].insertCell(-1).innerHTML = ''+
+                            //    '';
+
+                            $("#searchValue").val("");
+                            rows[i].style.color = "red";
+                            setTimeout(function () {
+                                rows[i].style.color = "black";
+
+                            }, 3000);
+                        }
+                    }
+                } else {
+                    alert("Please fill in the search bar before searching");
+                }
+
+            }
+
+            //EDIT BUTTON
+            $(document).on("click", ".btnEdit", function () {
+                /*$(this).val("Currently editing this row");*/
+                $("#btnUpdate").addClass("btn-danger");
+                $("#btnUpdate").show();
+                currentRowId = $(this).closest("tr").prop("id");
+                //alert("currentRowId: " + currentRowId);
+                if (JSON.parse(rawCaterersList) == rawCaterersList) { } else { rawCaterersList = JSON.parse(rawCaterersList) };
+                currentRow = $(this).closest("tr");
+                rawCaterersList = JSON.parse(rawCaterersList);
+                var Caterer = rawCaterersList[currentRowId]; //fix the row id issue
+                //console.log(Caterer.Cat_MealServices);
+                //var selectedMealList = JSON.parse(rawList.Cat_MealServices[]);
+                let selectedMealList = [];
+                //console.log(rawList.Cat_MealServices);
+                for (i = 0; i < Caterer.Cat_MealServices.length; i++) {
+                    selectedMealList.push(JSON.parse(Caterer.Cat_MealServices[i]));
+                }
+                selectedMealList.forEach(function (meal) {
+                    $("#" + meal.MealId).prop("checked", true);
+                });
+
+                $("#Caterer_Cat_Name").val(Caterer.Cat_FName); $("#Caterer_Cat_LName").val(Caterer.Cat_LName);
+                $("#Caterer_Cat_email").val(Caterer.Cat_email); $("#Caterer_Cat_phone").val(Caterer.Cat_Tel);
+
+            })
+            //UPDATE BTN
+            $(document).on("click", "#btnUpdate", function (e) {
+                e.preventDefault();
+                //var Caterer = JSON.parse(rawCaterersList[currentRowId]);
+                var Caterer = rawCaterersList[currentRowId];
+                var checkboxes = document.querySelectorAll('input[name="mealOptions"]:checked');
+                let checkedObjects = [];
+                let checkedValues = [];
+                var newName = $("#Caterer_Cat_Name").val();
+                var newSurname = $("#Caterer_Cat_LName").val();
+                var newEmail = $("#Caterer_Cat_email").val();
+                var newTele = $("#Caterer_Cat_phone").val();
+                checkboxes.forEach(function (checkbox) {
+                    checkedObjects.push(JSON.stringify({ MealId: checkbox.id, MealName: checkbox.value }));
+                    checkedValues.push(checkbox.value);
+                });
+
+                Caterer.Cat_FName = newName; Caterer.Cat_LName = newSurname; Caterer.Cat_email = newEmail; Caterer.Cat_Tel = newTele;
+                Caterer.Cat_MealServices = checkedObjects;
+
+                rawCaterersList[currentRowId] = Caterer;
+
+                var idtxt = "#" + Caterer.id;
+                currentRow.find('td').eq(0).text(newName + " " + newSurname);
+                currentRow.find('td').eq(1).text(newEmail);
+                currentRow.find('td').eq(2).text(newTele);
+                currentRow.find('td').eq(3).text(checkedValues);
+
+                //
+                $("#Caterer_Cat_Name").val(""); $("#Caterer_Cat_LName").val(""); $("#Caterer_Cat_email").val("");
+                $("#Caterer_Cat_phone").val("");
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.checked = false;
+
+
+                });
+                $(this).hide();
+                rawCaterersList = JSON.stringify(rawCaterersList)
+                localStorage.setItem("caterers", rawCaterersList);
+                window.location.reload();
+                //rawCaterersList = JSON.parse(rawCaterersList);
+            })
+
+
+            //DELETE BTN
+            $('#catererTable').on('click', '.btnDel', function () {
+                // Find the row containing the button and remove it
+                //$(this).closest('tr').remove();
+                var newCaterersList = []
+                rawCaterersList.forEach((caterer) => {
+                    var pars = JSON.parse(caterer);
+                    if (pars.Cat_Id == $(this).closest('tr').prop("id")) {
+                        $(this).closest('tr').remove();
+                        console.log(pars.Cat_Id);
+                    } else {
+                        newCaterersList.push(pars);
+
+                    };
+                })
+                rawCaterersList = JSON.stringify(newCaterersList); console.log(newCaterersList);
+                localStorage.setItem("caterers", rawCaterersList);
+                rawCaterersList = [];
+                rawCaterersList.push(JSON.parse(rawCaterersList));
+            });
+        </script>*@
+    @Scripts.Render("~/bundles/jqueryval")
+}

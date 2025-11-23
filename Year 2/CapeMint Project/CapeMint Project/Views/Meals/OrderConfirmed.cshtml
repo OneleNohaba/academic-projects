@@ -1,0 +1,43 @@
+﻿@model CapeMint_Project.Models.MealViewModel
+
+@{
+    ViewBag.Title = "Meal Order Confirmation";
+}
+<main>
+    <div class="row">
+        <h2>Meal Order Confirmation</h2>
+        <div id="todate">Date: @ViewBag.date</div>
+        <hr />
+        <h4>Here are your Order Details</h4>
+        <dl id="deL">
+        </dl>
+        <button class="btn btn-success" onclick="window.location.replace('/')">Go Home</button>
+    </div>
+</main>
+@section Scripts {
+    <script>
+        $(document).ready(() => {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            var deL = $("#deL");
+            var OrdersList = [];
+            OrdersList.push(localStorage.getItem("Orders"));
+            var OrderId = urlParams.get('OrderID');
+            OrdersList = JSON.parse(OrdersList);
+
+            OrdersList.forEach((order) =>
+            {
+                if(order.OrderId === OrderId){
+                    $("#deL").append(`<dt>Order ID</dt><dd>${order.OrderId}</dd><dt>Your Names:</dt><dd>${order.Names}</dd>
+                    <dt>Meal Type:</dt><dd>${order.Meal_Services.MealName}</dd><dt>Chosen Meal Agent</dt><dd>${order.Caterer.Names}
+                    </dd><dt>Meal Description</dt><dd>${order.MealDetails}</dd><dt>Hotel of Residence:</dt><dd>${order.Hotel}</dd>
+                    <dt>Date and Time Order Made:</dt><dd>${order.Date}</dd>`);
+                }
+            });
+
+
+        })
+    </script>
+
+
+}

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "INF154Pract10u21507628/1.0.0": {
+        "runtime": {
+          "INF154Pract10u21507628.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "INF154Pract10u21507628/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

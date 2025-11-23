@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapeMint Project", "CapeMint Project\CapeMint Project.csproj", "{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F552515-0EC9-45A5-8D6C-DD024A2AF883}
+	EndGlobalSection
+EndGlobal

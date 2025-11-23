@@ -1,0 +1,245 @@
+.header {
+	background-color: #00000000;
+	text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+}
+ 
+/* Style the top navigation bar */
+.topnav {
+	overflow: hidden;
+	background-color: #000000; border-radius: 5px;
+}
+
+/* Style the topnav links */
+.topnav a{
+  margin: auto;
+  float: right;
+  display: block;
+  color: white;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #FC4445;
+  color: #CAFAFE;
+  transition-duration: 0.8s;
+}
+.topnavText {
+  width: fit-content;
+  color: #CAFAFE;
+  font-size: 2.2em;
+  float: left;
+  margin: auto;
+}
+body {
+ background-color: #CAFAFE;
+  text-align: justify;
+  color: black;
+}
+h1 {
+  text-transform: capitalize;
+}
+.input {
+  background-color: #b7f6fc67;
+  border-style: groove;
+  border-color: #000000;
+  width: 280px;
+  height: 25px;
+}
+.textareas {
+  background-color: #b7f6fc67;
+  width: 100%;
+}
+/*create side columns*/
+.column_side {
+  visibility: visible;
+  width: 25%;
+  border: 5px; border-right: 0px;
+  background-color: #a7f0f7;
+  border-style: inset;
+  border-radius: 3px;
+  border-color: #CAFAFE;
+  text-align: justify;
+  font-size: small;
+  padding: 1px;
+  float: left;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+/* Middle column */
+.column_middle {
+  width: 73.3%;
+  padding: 5px;
+  text-align: justify;
+  float: left;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.pictureContainer {
+  width: 30%;
+  padding: 1px;
+  display: flex;
+  display: table;
+  clear: none;
+}
+.pictureContainer img{
+  border-style: solid;
+  border-color: #a7f0f7;
+  width: 100%;
+  border-radius: 60%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.educationBox {
+  border-style: solid;
+  border-radius: 10px;
+  margin: 1% auto;
+  padding: 1%;
+  clear: both;
+}
+.tabSpace {
+  tab-size: 8;
+}
+.pictureContainerText {
+  overflow: hidden;
+  display: flex;
+  width: 58%;
+  height: fit-content;
+  float: inline-end;
+  display: table;
+  clear: none;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Footer Styling*/
+
+.footer {
+  overflow: hidden;
+  border-style: inset;
+  border-color: #a7f0f7;
+  background-color: #000000;
+  color: azure; border-radius: 10px;
+  padding: 1%;
+}
+
+/*SocialList*/
+.socialList {
+  list-style-type:none
+}
+
+/*links*/
+.footer a:link {
+  color: rgb(255, 240, 240);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.footer a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #CAFAFE;
+  text-decoration: underline dotted; transition-duration: 0.8s;
+}
+
+a:active {
+  color: rgb(148, 194, 89);
+  text-decoration: underline;
+}
+
+#box-3 {
+  border-style: groove; border: 5px; border-radius: 5px; border-color: rgb(0, 0, 0); margin: 2% auto;
+  width: 72%;
+  padding: 10px;
+  position:relative;animation:animateleft 0.7s}
+  @keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}
+  }
+#box-3:hover{
+  top: 1%;
+  box-shadow: 0px 8px 16px 8px rgba(0,0,0,0.3);
+}
+.counterBox {
+  border: #000000;
+  border-style: ridge;
+  border-color: #CAFAFE;
+  border-radius: 5px;
+  width: 80%;
+  margin: auto;
+}
+.counterBox h3 {
+  text-decoration: underline;
+}
+#box-4 {
+  color: #000000;
+  background-color: #00b0f60c;
+  border-radius: 15px;
+  margin: 1% auto 1% auto;
+  width: 80%;
+  padding: 20px;
+  box-shadow: 0px 8px 16px 8px rgba(0,0,0,0.3);
+  position:relative;animation:animateleft 0.7s}
+  @keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}
+  }
+.clickto {
+  padding: 16px 32px;
+  text-align: center; display: inline-block; font-size: 16px; margin: 4px 2px; transition-duration: 0.7s; 
+}
+#num{
+  font-size: 2.5em;
+
+}
+#btnIncrease {
+  background-color: green;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+#btnDecrease {
+  background-color: red;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+/* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .topnav {border-radius: 0px 0px 0px 0px;}
+  .topnav a {
+    float: none;
+    text-align: center; border-radius: 2px;
+  }
+  .topnavText{
+    float: none;
+    font-size: 1.5em;
+  }
+
+ .column_side {
+	display: inline-block; width: 99%; border: 4px; border-color: #a7f0f7;
+  border-style: inset;
+  border-radius: 3px;
+  }
+.column_middle {
+  width: 100%;
+}
+.tabSpace{
+  tab-size: 2;
+}
+.footer a {
+font-size: 3.5vw;
+  color: azure;
+}
+#box {width: 325px;}
+#box-3 { width: 100%;}
+#box-4 {width: 90%;}
+}
