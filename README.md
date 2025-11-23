@@ -5,34 +5,93 @@ A collection of academic projects completed during my university studies, showca
 ## Repository Structure
 
 ### Year 1
-- **[INF154 Practical 10](./Year%201/INF154Pract10u21507628)** - A windows forms Dice Game that has the ability to roll a die, store the rolled value into an array which mathematical analysis can be performed on such as getting the average of the rolls.
-  - **Tech Stack**: .NET 6.0, Windows Forms App
+- **[INF154 Practical 10](./Year%201/INF154Pract10u21507628)** - A Windows Forms dice game app that can roll a die, store rolled values in an array, and perform mathematical analysis such as calculating the average of the rolls.
+  - **Tech Stack**: .NET 6.0, Windows Forms
   - **Key Features**: Random number generator
-    - Analysis of rolls: Sum, average and grouping of rolls
-    - Display of Previous rolls, Image of rolled dice and Output for Analysis.
-  - **Learning Outcomes**: Random number generation
-    - Windows Forms App design and manipulation (Throughout the whole semester Module*)
+    - Analysis of rolls: sum, average, and grouping of rolls
+    - Display of previous rolls, image of rolled dice, and analysis output
+  - **Learning Outcomes**:
+    - Random number generation
+    - Windows Forms app design and manipulation (covered throughout the semester module)
     - Arrays
-    - Array functions and additional application of arrays and lists.
+    - Array functions and additional applications of arrays and lists
     - String manipulation
-    - Critical thinking and basic arithmetics.
+    - Critical thinking and basic arithmetic
+
+- **[INF164 Assignment 2](./Year%201/INF164%20Assignment2)** - A demo personal portfolio website with some interactive functionality.
+  - **Tech Stack**: HTML, CSS, JavaScript
+  - **Key Features**: Portfolio website
+    - A JavaScript counter
+  - **Learning Outcomes**:
+    - Web design
+    - JavaScript functions
+    - CSS properties and design
 
 ### Year 2
-- **[Project 3](./year-2/project-3)** - Brief description of what the project does
-  - **Tech Stack**: List technologies used
-  - **Key Features**: Highlight main functionality
-  - **Learning Outcomes**: What skills were developed
+- **[INF271 Assignment 3](./Year%202/Assignment%203)** - The third and final assignment for the module: a website for a non-existent library that manages book borrowing and returns and includes reporting features.
+  - **Tech Stack**:
+    - ASP .NET Core Web App MVC (C#)
+    - Microsoft SQL Server
+  - **Key Features**:
+    - Book lending mechanism
+    - Adding, editing, and deleting books
+    - Viewing book status
+    - Reporting for insights into the library
+  - **Learning Outcomes**:
+    - Microsoft SQL database management
+    - Bootstrap 5 usage
+    - MVC page composition
+    - Asynchronous processing using Entity Framework
+    - DOM manipulation with jQuery
+    - LINQ/Lambda expressions
+    - Use of add-ons and third-party integrations in MVC
 
-- **[Project 4](./year-2/project-4)** - Brief description of what the project does
-  - **Tech Stack**: List technologies used
-  - **Key Features**: Highlight main functionality
-  - **Learning Outcomes**: What skills were developed
+- **[INF271 Assignment 1](./Year%202/CapeMint%20Project)** - The first individual assignment for the module: a portal for a tourism management company called CapeMint Holdings.
+  - **Tech Stack**:
+    - ASP .NET Core Web App MVC (C#)
+    - Browser local storage
+  - **Key Features**:
+    - Hotel booking/reservation
+    - Meal booking
+    - Caterer management
+    - Reporting dashboard
+  - **Learning Outcomes**:
+    - Application of Bootstrap for Responsive Web Development
+    - Exporting data to a text file
+    - Application of jQuery and JavaScript
+    - Extensions, add-ins, and prefabricated code libraries
 
 ### Year 3
-- **[Capstone Project](./year-3/capstone-project)** - Brief description of what the project does
-  - **Tech Stack**: List technologies used
-  - **Key Features**: Highlight main functionality
-  - **Learning Outcomes**: What skills were developed
+- **[Capstone Project](./year-3/capstone-project)** - The year-long final-year project: a volunteer and event management system with complementary features. The system supported EPI-USE Africa consultants and employees volunteering for events created by `erp.ngo`, the NGO branch of groupelephant.com (the parent company of EPI-USE).
+  - **Tech Stack**:
+    - ASP .NET Core Web API (C#)
+    - MS SQL
+    - Angular
+    - Ionic
+    - Docker
+  - **Key Features**:
+    - User registration and sign-in
+    - Event management (create, read, and delete)
+    - Robust email notifications
+    - Donations to events and initiatives
+    - Monetary donations handled through the PayFast API
+    - Google Maps API for event locations
+    - PDF signing through a third-party API: DocuSeal
+    - Extensive user help functionality
+    - FAQ management
+    - Event feedback management with media uploads
+    - Event check-in through a mobile app (Ionic)
+    - System backup and restoration
+    - Audit trails
+    - Extensive business-centered reports
+  - **Learning Outcomes**:
+    - Agile project management (Jira, Confluence, and Kanban)
+    - Translation of business requirements into features
+    - Documentation of the SDLC
+    - Data modelling (UML and traditional)
+    - Deployment to production (cloud-based; we chose AWS EC2)
+    - Working with a real-world client to develop a system
+    - Demonstration of programming and development to solve a real-world problem using the skills and technologies learned during the course
 
 ## About
 
@@ -40,10 +99,25 @@ These projects represent my academic journey in software development, demonstrat
 
 ## Skills Demonstrated
 
-- List key programming languages
-- List frameworks and tools
-- List methodologies (e.g., Agile, TDD)
-- List other relevant skills
+- C#
+- SQL
+- HTML
+- CSS
+- TypeScript
+- JavaScript
+- SCSS
+- Angular
+- Ionic
+- LINQ/Lambda
+- Entity Framework
+- .NET Framework
+- ASP .NET Core MVC
+- ASP .NET Core Web API
+- Docker
+- Agile project management
+- Wireframing
+- Data Modelling
+- Jira
 
 ## License
 
@@ -52,6 +126,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 Feel free to reach out if you have any questions about these projects:
-- Email: your.email@example.com
-- LinkedIn: [Your Name](your-linkedin-url)
-- Portfolio: [your-website.com](your-website-url)
+- Email: onelenohaba@gmail.com
+- LinkedIn: [Onele Nohaba](https://linkedin.com/in/onele-nohaba)
