@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J2QE+DNnDQE=",
+  "dgSpecHash": "oSXjLRsTLBA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\0843o\\OneDrive - University of Pretoria\\BIT Study Material\\Year 1\\Semester 1\\INF154\\Practicals\\Pract 10 stuff\\INF154Pract10u21507628\\INF154Pract10u21507628\\INF154Pract10u21507628.csproj",
+  "projectFilePath": "C:\\Users\\0843o\\Documents\\academic-projects\\Year 1\\INF154Pract10u21507628\\INF154Pract10u21507628\\INF154Pract10u21507628.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\0843o\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
     "C:\\Users\\0843o\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",

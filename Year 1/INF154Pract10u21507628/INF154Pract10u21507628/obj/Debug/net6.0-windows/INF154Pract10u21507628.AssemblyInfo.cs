@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("INF154Pract10u21507628")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4397b24da0cb1e503f9e1bf6fa50fa6dd72913e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("INF154Pract10u21507628")]
 [assembly: System.Reflection.AssemblyTitleAttribute("INF154Pract10u21507628")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
