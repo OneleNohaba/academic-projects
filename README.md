@@ -5,7 +5,7 @@ A collection of academic projects completed during my university studies, showca
 ## Repository Structure
 
 ### Year 1
-- **[INF154 Practical 10](./year 1/INF154Pract10u21507628)** - A windows forms Dice Game that has the ability to roll a die, store the rolled value into an array which mathematical analysis can be performed on such as getting the average of the rolls.
+- **[INF154 Practical 10](./Year%201/INF154Pract10u21507628)** - A windows forms Dice Game that has the ability to roll a die, store the rolled value into an array which mathematical analysis can be performed on such as getting the average of the rolls.
   - **Tech Stack**: .NET 6.0, Windows Forms App
   - **Key Features**: Random number generator
     - Analysis of rolls: Sum, average and grouping of rolls
