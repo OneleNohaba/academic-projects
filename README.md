@@ -17,6 +17,13 @@ A collection of academic projects completed during my university studies, showca
     - Array functions and additional applications of arrays and lists
     - String manipulation
     - Critical thinking and basic arithmetic
+  - **Instructions to Run the Application**
+    1. Ensure you have .NET 6.0 SDK installed on your machine.
+    2. Clone the repository to your local machine.
+    3. Navigate to the project directory: `Year 1/INF154Pract10u21507628`.
+    4. Open the solution file (`.sln`) in Visual Studio.
+    5. Build the solution to restore dependencies.
+    6. Run the application using Visual Studio's built-in debugger or by executing the compiled binary from the output directory. 
 
 - **[INF164 Assignment 2](./Year%201/INF164%20Assignment2)** - A demo personal portfolio website with some interactive functionality.
   - **Tech Stack**: HTML, CSS, JavaScript
@@ -26,9 +33,14 @@ A collection of academic projects completed during my university studies, showca
     - Web design
     - JavaScript functions
     - CSS properties and design
+    - HTML structure and semantics
+  - **Instructions to Run the Application**
+    1. Clone the repository to your local machine.
+    2. Navigate to the project directory: `Year 1/INF164 Assignment2`.
+    3. Open the `index.html` file in your preferred web browser to view the portfolio website.
 
 ### Year 2
-- **[INF271 Assignment 3](./Year%202/Assignment%203)** - The third and final assignment for the module: a website for a non-existent library that manages book borrowing and returns and includes reporting features.
+- **[INF271 Assignment 3](./Year%202/Assignment%203)** - The third and final assignment for the module: a website for a library that manages book borrowing and returns and includes reporting features.
   - **Tech Stack**:
     - ASP .NET Core Web App MVC (C#)
     - Microsoft SQL Server
@@ -45,6 +57,15 @@ A collection of academic projects completed during my university studies, showca
     - DOM manipulation with jQuery
     - LINQ/Lambda expressions
     - Use of add-ons and third-party integrations in MVC
+  - **Instructions to Run the Application**
+    1. Ensure you have .NET 6.0 SDK and Microsoft SQL Server installed on your machine.
+    2. Clone the repository to your local machine.
+    3. Navigate to the project directory: `Year 2/Assignment 3`.
+    4. Open the solution file (`.sln`) in Visual Studio.
+    5. In your MS SQL Server instance, create a new database for the application using the provided SQL scripts located in the `Assignment 3` folder.  First run the `library.sql` script to create the empty database, then run the `drop and create Archive.sql` to add the necessary `Archive` table.
+    6. Add/Edit the database connection through the Tools > Connect to Database option in Visual Studio to point to your local SQL Server instance.
+    7. Build the solution to restore dependencies.
+    8. Run the application using Visual Studio's built-in debugger or by executing the compiled binary from the output directory.
 
 - **[INF271 Assignment 1](./Year%202/CapeMint%20Project)** - The first individual assignment for the module: a portal for a tourism management company called CapeMint Holdings.
   - **Tech Stack**:
@@ -60,6 +81,13 @@ A collection of academic projects completed during my university studies, showca
     - Exporting data to a text file
     - Application of jQuery and JavaScript
     - Extensions, add-ins, and prefabricated code libraries
+  - **Instructions to Run the Application**
+    1. Ensure you have .NET 6.0 SDK installed on your machine.
+    2. Clone the repository to your local machine.
+    3. Navigate to the project directory: `Year 2/CapeMint Project`.
+    4. Open the solution file (`.sln`) in Visual Studio.
+    5. Build the solution to restore dependencies.
+    6. Run the application using Visual Studio's built-in debugger or by executing the compiled binary from the output directory.
 
 ### Year 3
 - **[Capstone Project](./Year%203/Capstone%20Project/)** - The year-long final-year project: a volunteer and event management system with complementary features. The system supported EPI-USE Africa consultants and employees volunteering for events created by [erp.ngo](https://erp.ngo), the NGO branch of [groupelephant.com](https://www.groupelephant.com) (the parent company of EPI-USE).
