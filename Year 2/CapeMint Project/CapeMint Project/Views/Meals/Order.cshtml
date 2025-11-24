@@ -1,0 +1,181 @@
+@model CapeMint_Project.Models.MealViewModel
+@{
+    ViewBag.Title = "Place Meal Order";
+}
+<main>
+    <h2>Order a Meal</h2>
+    <hr />
+    <div class="row">
+        <div class="col">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.FName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MealTypeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.MealTypeId, new SelectList(Model.MealTypeList, "MealId", "MealName"), "Select Meal Option", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MealTypeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.CatererList, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.CatererList, new SelectList(Model.CatererList, "Id", "Cat_Name"), "Select Meal Agent",
+                        new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CatererList, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class=" col">
+            <div class="form-group">
+                @Html.LabelFor(model => model.MealDetails, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md">
+                    @Html.TextAreaFor(model => model.MealDetails, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MealDetails, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.hotelId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.hotelId, new SelectList(Model.HotelList, "HotelId", "HotelName"), "Select Your Hotel", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.hotelId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+
+        </div><br />
+        <div class="row">
+            <div class="form-group">
+                <div class="col">
+                    <input type="button" value="Order Meal" id="btnOrder" class="btn btn-warning"/>
+                    <button class="btn btn-dark" id="btnViewOrder">View Order</button>
+                </div>
+
+            </div>
+        </div>
+    <div style="height: 300px; overflow-y: scroll;">
+        <table class="table table-condensed" id="catererTable">
+            <thead style="position: sticky; top: 0; background-color: lightgrey;">
+                <tr>
+                    <th style="width: 15%;">Name + Surname</th>
+                    <th style="width: fit-content;">Email</th>
+                    <th style="width: fit-content;">Telephone</th>
+                    <th style="width: fit-content;">Meal Services</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            let rawCaterersList = [];
+            let OrdersList = [];
+            $("#btnViewOrder").hide();
+            $("#nav-meals").prop("class", "nav-link active");
+            var CatererTable = $("#catererTable tbody");
+
+            if (localStorage.Orders) {
+                OrdersList = JSON.parse(localStorage.getItem("Orders"));
+            }
+            if (localStorage.caterers) {
+
+                //rawCaterersList.empty;
+                var catererDropdownList = $("#CatererList");
+                rawCaterersList = JSON.parse(localStorage.getItem("caterers"));
+                catererDropdownList.empty();
+                catererDropdownList.append($("<option></option>").val("").text("Select Meal Agent"));
+                var Order_Id;
+
+                rawCaterersList.forEach(function (caterer) {
+                    let selectedMealList = [];
+                    var CatererObj = caterer;
+                    var newRow = $("<tr id=" + CatererObj.Cat_Id + "></tr>");
+                    catererDropdownList.append($("<option></option>").val(CatererObj.Cat_Id).text(CatererObj.Cat_FName + " " + CatererObj.Cat_LName));
+
+                    //Add the data into the row
+                    newRow.append($("<td id='names'></td>").append(CatererObj.Cat_FName + " " + CatererObj.Cat_LName));
+                    newRow.append($("<td id='email'></td>").append(CatererObj.Cat_email));
+                    newRow.append($("<td id='tel'></td>").append(CatererObj.Cat_Tel));
+                    for (i = 0; i < CatererObj.Cat_MealServices.length; i++) {
+                        var tempObj = JSON.parse(CatererObj.Cat_MealServices[i])
+                        selectedMealList.push(tempObj.MealName);
+                    }
+                    newRow.append($("<td id='mealServices'></td>").append(selectedMealList.toString()));
+                    CatererTable.append(newRow)
+
+                });
+
+                //Validate the form
+                $("#btnOrder").click(() => {
+                    var names = $("#FName").val() +" "+ $("#LName").val();
+                    var catererId = $("#CatererList").val();
+                    var mealType_Id = $("#MealTypeId").val();
+                    var hotel_Id = $("#hotelId").val();
+                    var mealDetails = $("#MealDetails").val();
+                    var dateofOrder;
+
+                    if (catererId !== '' && names !== '' && mealDetails !== '' && hotel_Id !== '') {
+                        $.post('@Url.Action("getUniques", "Meals")', { hotelId: Number(hotel_Id), mealTypeId: Number(mealType_Id) }).done((data) => {
+                            Order_Id = data.split("/")[0];
+                            dateofOrder = data.split("/")[1];
+                            var mealName = data.split("/")[3];
+                            var hotelName = data.split("/")[2];
+                            var Cat_Names;
+                            rawCaterersList.forEach((caterer) => {
+                                var parsedCaterer = caterer;
+                                if (parsedCaterer.Cat_Id == catererId) {
+                                    Cat_Names = parsedCaterer.Cat_FName + " " + parsedCaterer.Cat_LName;
+                                };
+                            })
+
+                            var order = {
+                                Names: names, Meal_Services: { MealId: mealType_Id, MealName: mealName }, Caterer: { Cat_Id: catererId, Names: Cat_Names },
+                                MealDetails: mealDetails, Date: dateofOrder, OrderId: Order_Id, Hotel: hotelName
+                            };
+                            OrdersList.push(order);
+                            localStorage.setItem("Orders", JSON.stringify(OrdersList));
+
+                            //ALL GOOD
+                            $("#FName").val(''); $("#LName").val(''); $("#CatererList").val(''); $("#MealTypeId").val(''); $("#hotelId").val('');
+                            $("#MealDetails").val('');
+
+                            confirm("Your order has been Placed.");
+                            $("#btnViewOrder").show();
+
+                        });
+
+                    } else {
+                        alert("Please Ensure you filled in all form parameters");
+                    }
+                })
+
+                //VIEW ORDER
+                $("#btnViewOrder").click(() => {
+                    window.location.href = '@Url.Action("OrderConfirmed", "Meals")' + '?OrderID=' + encodeURIComponent(Order_Id);
+                })
+
+            }
+        });
+    </script>
+}

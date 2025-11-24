@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "Admin Dashboard";
+}
+<main>
+    <div class="row">
+        <div class="col rounded-3 bg-dark-subtle m-2" style="height: 100px">
+            <div class="col">
+                <img src="~/Images/Icons/bookingIcon.png" class="ico" alt="Booking Icon" />
+            </div>
+            <div class="col">
+                <h5>Total Bookings</h5>
+                <span id="totalbookingsNo" class="pillNo"></span>
+            </div>
+            
+        </div>
+        <div class="col rounded-3 border m-2">
+            <h5>Total Income</h5>
+            <img src="~/Images/Icons/income-icon.png" class="ico" alt="Money Icon" />
+            <span id="totalIncome" class="pillNo"></span>
+        </div>
+        <div class="col rounded-3 border m-2">
+            <h5>Total Guests</h5><img src="~/Images/Icons/guest-icon.png" class="ico" alt="Door Icon" />
+            <span id="totalguests" class="pillNo"></span>
+            
+        </div>
+        <div class="col rounded-3 border m-2">
+            <h5><span id="monthYear"> @ViewBag.Month</span></h5>
+            <img src="~/Images/Icons/date-and-time-icon.png" class="ico" alt="Calendar Icon" />
+            <span id="currentDate">Current Date: @ViewBag.date</span>
+            
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <h4>Sales Performance</h4> <br />
+        <table class="table table-bordered w-50" id="salesPerfTable">
+            <thead class="table-active">
+                <tr>
+                    <th>Hotel</th>
+                    <th>Number of booking</th>
+                    <th>Total Sales (R)</th>
+                    <th class="w-25">Logo</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    @*<div class="row" style="height: 300px; overflow-y: scroll;">*@
+    <div class="row" style="overflow-y: scroll;">
+    <button class="btn btn-dark w-25 float-end" id="exportTable">Export Table</button>
+    <table class="table table-light" id="customersTable">
+        <thead>
+            <tr>
+                <th>Names</th>
+                <th>Booking Date</th>
+                <th>Phone Number</th>
+                <th>Hotel</th>
+                <th>Room Type</th>
+                <th>Number of Guests in Room</th>
+                <th>Amount (R)</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+
+</main>
+@section Scripts {
+    <script>
+        $(document).ready(function ()
+        {
+            var bookingsList = JSON.parse(localStorage.getItem("Bookings"));
+            var totalBookings = bookingsList.length;
+            var totalIncome = 0.0;
+            var totalGuests = 0
+            let CapeHoneybookings = 0, CapeCowbookings = 0, CapeIvorybookings = 0, CapeSweetbookings = 0,
+                CapeHivebookings = 0, CapeHoneysales = 0, CapeCowsales = 0, CapeIvorysales = 0,CapeSweetsales = 0, CapeHivesales = 0;
+            $("#nav-dash").prop("class", "nav-link active");
+            const tableBody = $("#customersTable tbody");
+            bookingsList.forEach((item) =>
+            {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${item.FName} ${item.LName}</td><td>${item.DateMade}</td><td>${item.TelephoneNumber}</td><td>${item.hotelName}</td>
+                <td>${item.roomType}</td><td>${item.guestsNo}</td><td>${item.roomPrice}</td>`;
+                totalIncome += item.roomPrice;
+                totalGuests += item.guestsNo;
+                tableBody.append(row);
+                switch (item.hotelName) {
+                    case 'CapeHoney':
+                        CapeHoneybookings += 1;
+                        CapeHoneysales += item.roomPrice;
+                        break;
+                    case 'CapeCow':
+                        CapeCowbookings += 1;
+
+                        CapeCowsales += item.roomPrice;
+                        break
+                    case 'CapeIvory':
+                        CapeIvorybookings += 1;
+                        CapeIvorysales += item.roomPrice;
+                        break;
+                    case 'CapeHive':
+                        CapeHivebookings += 1;
+                        CapeHivesales += item.roomPrice;
+                        break;
+                    case 'CapeSweet':
+                        CapeSweetbookings += 1;
+                        CapeSweetsales += item.roomPrice;
+                        break;
+                }
+            });
+            $("#totalbookingsNo").text(totalBookings);
+            $("#totalIncome").text("R " + totalIncome);
+            $("#totalguests").text(totalGuests);
+            let Hotels = ['CapeCow', 'CapeHoney', 'CapeSweet', 'CapeHive', 'CapeIvory'];
+            //Filling in the performance table
+            const performanceTable = $("#salesPerfTable tbody");
+            var row = document.createElement("tr");
+            row.innerHTML = `<td>CapeCow</td><td>${CapeCowbookings}</td><td>${CapeCowsales}</td><td><img src="@Url.Content("~/Images/Hotels/CapeCow_Logo.png")" class="ico-sm"/></td>`;
+            performanceTable.append(row);
+            row = document.createElement("tr");
+            row.innerHTML = `<td>CapeSweet</td><td>${CapeSweetbookings}</td><td>${CapeSweetsales}</td><td><img src="@Url.Content("~/Images/Hotels/CapeSweet_Logo.png")" class="ico-sm"/></td>`;
+            performanceTable.append(row);
+            row = document.createElement("tr");
+            row.innerHTML = `<td>CapeHive</td><td>${CapeHivebookings}</td><td>${CapeHivesales}</td><td><img src="@Url.Content("~/Images/Hotels/CapeHive_Logo.png")" class="ico-sm"/></td>`;
+            performanceTable.append(row);
+            row = document.createElement("tr");
+            row.innerHTML = `<td>CapeIvory</td><td>${CapeIvorybookings}</td><td>${CapeIvorysales}</td><td><img src="@Url.Content("~/Images/Hotels/Capeivory_Logo.png")" class="ico-sm"/></td>`;
+            performanceTable.append(row);
+            row = document.createElement("tr");
+            row.innerHTML = `<td>CapeHoney</td><td>${CapeHoneybookings}</td><td>${CapeHoneysales}</td><td><img src="@Url.Content("~/Images/Hotels/CapeHoney_Logo.png")" class="ico-sm"/></td>`;
+            performanceTable.append(row);
+            $('#exportTable').click(function () {
+                var tableContent = '';
+                $('#customersTable tr').each(function () {
+                    var rowContent = '';
+                    $(this).find('td, th').each(function () {
+                        rowContent += '"' + $(this).text().replace(/"/g,'""') + '",';
+                    });
+                    tableContent += rowContent.slice(0,-1) + '\n';
+                });
+
+                var blob = new Blob([tableContent], { type: 'text/csv' });
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'Customers_Table.csv';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        })
+    </script>
+}
+

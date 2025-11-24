@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\0843o\\Documents\\academic-projects\\Year 2\\CapeMint Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}|CapeMint Project\\CapeMint Project.csproj|c:\\users\\0843o\\documents\\academic-projects\\year 2\\capemint project\\capemint project\\views\\booking\\makebooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}|CapeMint Project\\CapeMint Project.csproj|solutionrelative:capemint project\\views\\booking\\makebooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}|CapeMint Project\\CapeMint Project.csproj|C:\\Users\\0843o\\Documents\\academic-projects\\Year 2\\CapeMint Project\\capemint project\\views\\home\\hotels.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FAC3C737-704D-4A5A-AAB9-930CA02B5D83}|CapeMint Project\\CapeMint Project.csproj|solutionrelative:capemint project\\views\\home\\hotels.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 195,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MakeBooking.cshtml",
+              "DocumentMoniker": "C:\\Users\\0843o\\Documents\\academic-projects\\Year 2\\CapeMint Project\\CapeMint Project\\Views\\Booking\\MakeBooking.cshtml",
+              "RelativeDocumentMoniker": "CapeMint Project\\Views\\Booking\\MakeBooking.cshtml",
+              "ToolTip": "C:\\Users\\0843o\\Documents\\academic-projects\\Year 2\\CapeMint Project\\CapeMint Project\\Views\\Booking\\MakeBooking.cshtml",
+              "RelativeToolTip": "CapeMint Project\\Views\\Booking\\MakeBooking.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T00:07:52.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Hotels.cshtml",
+              "DocumentMoniker": "C:\\Users\\0843o\\Documents\\academic-projects\\Year 2\\CapeMint Project\\CapeMint Project\\Views\\Home\\Hotels.cshtml",
+              "RelativeDocumentMoniker": "CapeMint Project\\Views\\Home\\Hotels.cshtml",
+              "ToolTip": "C:\\Users\\0843o\\Documents\\academic-projects\\Year 2\\CapeMint Project\\CapeMint Project\\Views\\Home\\Hotels.cshtml",
+              "RelativeToolTip": "CapeMint Project\\Views\\Home\\Hotels.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T19:41:21.984Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

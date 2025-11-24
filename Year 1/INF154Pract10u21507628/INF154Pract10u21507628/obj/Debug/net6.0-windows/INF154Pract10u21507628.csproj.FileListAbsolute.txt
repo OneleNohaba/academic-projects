@@ -1,0 +1,71 @@
+K:\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.exe
+K:\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.deps.json
+K:\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.runtimeconfig.json
+K:\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.dll
+K:\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.pdb
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.AssemblyReference.cache
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.Form1.resources
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.GenerateResource.cache
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.GeneratedMSBuildEditorConfig.editorconfig
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.AssemblyInfoInputs.cache
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.AssemblyInfo.cs
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.CoreCompileInputs.cache
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.dll
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\refint\INF154Pract10u21507628.dll
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.pdb
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.genruntimeconfig.cache
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\ref\INF154Pract10u21507628.dll
+K:\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.Properties.Resources.resources
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.exe
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.deps.json
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.runtimeconfig.json
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.dll
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.pdb
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.AssemblyReference.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.Form1.resources
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.Properties.Resources.resources
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.GenerateResource.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.AssemblyInfoInputs.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.AssemblyInfo.cs
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.CoreCompileInputs.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.dll
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\refint\INF154Pract10u21507628.dll
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.pdb
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.genruntimeconfig.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\ref\INF154Pract10u21507628.dll
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.exe
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.deps.json
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.runtimeconfig.json
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.dll
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.pdb
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.Form1.resources
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.Properties.Resources.resources
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.GenerateResource.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.AssemblyInfoInputs.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.AssemblyInfo.cs
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.CoreCompileInputs.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.dll
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\refint\INF154Pract10u21507628.dll
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.pdb
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.genruntimeconfig.cache
+C:\Users\0843o\OneDrive - University of Pretoria\BIT Study Material\Year 1\Semester 1\INF154\Practicals\Pract 10 stuff\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\ref\INF154Pract10u21507628.dll
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.exe
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.deps.json
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.runtimeconfig.json
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.dll
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\bin\Debug\net6.0-windows\INF154Pract10u21507628.pdb
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.Form1.resources
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.Properties.Resources.resources
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.GenerateResource.cache
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.AssemblyInfoInputs.cache
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.AssemblyInfo.cs
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.csproj.CoreCompileInputs.cache
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.sourcelink.json
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.dll
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\refint\INF154Pract10u21507628.dll
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.pdb
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\INF154Pract10u21507628.genruntimeconfig.cache
+C:\Users\0843o\Documents\academic-projects\Year 1\INF154Pract10u21507628\INF154Pract10u21507628\obj\Debug\net6.0-windows\ref\INF154Pract10u21507628.dll

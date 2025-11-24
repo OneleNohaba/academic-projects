@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Hotels Page";
+}
+
+<main>
+    <div class="row">
+        <div class="col-md">
+            <h1>
+                Booking your stay in Capetropolis
+            </h1>
+            <p>
+                Secure a safe accomodation and a memorable experience in our facilities
+            </p>
+            <p class="align-content-center">
+                <button class="btn btn-secondary" id="btnGetStarted" >GET STARTED</button>
+            </p>
+        </div>
+        <div class="col-md">
+            <img class="rounded-3" src="~/Images/Sample_Images/lodging-pict.jpg" />
+        </div>
+    </div>
+    <hr style="opacity: 7%" />
+    <div class="row" id="hotelsection">
+        <h4 id="headsup">Click any tile to go booking</h4>
+        <div class="col">
+            <div class="card" id="cardCapeHoney">
+                <div class="card-header">CapeHoney</div>
+                <center><img class="card-img-top" id="logo" src="~/Images/Hotels/CapeHoney_Logo.png" /></center>
+                <p class="card-body">
+                    We offer special complementary services like massage, games, gym, swimming pool, evening buffet, special party nigts.
+                </p>
+            </div>
+        </div>
+            <div class="col">
+                <div class="card" id="cardCapeIvory">
+                    <div class="card-header">CapeIvory</div>
+                    <img class="card-img-top" id="logo" src="~/Images/Hotels/CapeIvory_Logo.png" />
+                    <p class="card-body">
+                        We offer exquisite rooms at affordable rates. You will get an unforgetable experience.
+                    </p>
+                </div>
+            </div>
+
+        <div class="col">
+            <div class="card" id="cardCapeSweet">
+                <div class="card-header">CapeSweet</div>
+                <center><img class="card-img-top" id="logo" src="~/Images/Hotels/CapeSweet_Logo.png" /></center>
+                <p class="card-body">
+                    At CapeSweet you will experience the mixtre of sweetness and pleasure. We promise you an unbeatable experience.
+                </p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="cardCapeHive">
+                <div class="card-header">CapeHive</div>
+                <img class="card-img-top" id="logo" src="~/Images/Hotels/CapeHive_Logo.png" />
+                <p class="card-body">
+                    Looking for a place to hide for a few days? CapeHive is perfect. Come and enjoy the serenity an ambience of nature that our 
+                    environment offers.
+                </p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="cardCapeCow">
+                <div class="card-header">CapeCow</div>
+                <center><img class="card-img-top" id="logo" src="~/Images/Hotels/CapeCow_Logo.png" /></center>
+                <p class="card-body">
+                    Come to us, we have a variety og pleasurable services that are tailored made for the comfort of our guests.
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <br />
+    <div class="row">
+        <div class="col-md">
+            <img class="rounded-3" src="~/Images/Sample_Images/Tourism Image.jpg" style="width:100%" />
+        </div>
+        <div class="col-md">
+            <h1>
+                Capetropolis Tourism
+            </h1>
+            <p>
+                Welcome to Capetropolis. Our island will offer you comfort and pleasure, the kind that is rare to find elsewhere!
+            </p>
+            <p>
+                The attractions in our island include nature, a game reserve, historical sites and monuments, exquisite hotels and restaurants, shopping malls. 
+                Visit us to have a memorable experience.
+            </p>
+        </div>
+        
+    </div>
+ @section scripts {
+     <script>
+         $(document).ready(function () {
+             var getStarted = false;
+             $("#headsup").hide()
+             $("#nav-hotel").prop("class", "nav-link active");
+
+             $("#btnGetStarted").on("click", function () {
+                 $(this).prop("class", "btn btn-success");
+                 window.open("#hotelsection", "_self");
+                 $("#headsup").show()
+                 getStarted = true;
+                 if (getStarted) {
+                     document.querySelectorAll(".card-header").forEach((card) => {
+                         $(card).addClass('chard');
+                     });
+                 $("#cardCapeHoney").on("click", function () {
+                     window.location.replace("@Url.Action("MakeBooking","Booking", new {hotelId=1})");
+                 });
+                 $("#cardCapeIvory").on("click", function () {
+                    window.location.replace("@Url.Action("MakeBooking","Booking", new {hotelId=2})");
+                 });
+                 $("#cardCapeSweet").on("click", function () {
+                      window.location.replace("@Url.Action("MakeBooking","Booking", new {hotelId=3})");
+                 });
+                  $("#cardCapeHive").on("click", function () {
+                      window.location.replace("@Url.Action("MakeBooking","Booking", new {hotelId=4})");
+                  });
+                 $("#cardCapeCow").on("click", function () {
+                     window.location.replace("@Url.Action("MakeBooking","Booking", new {hotelId=5})");
+                 });
+                 };
+
+
+             })
+
+
+         })
+     </script>
+     }
+</main>

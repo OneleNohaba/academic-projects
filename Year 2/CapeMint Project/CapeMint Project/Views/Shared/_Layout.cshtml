@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Capemint</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/popper.js"></script>
+    <style>
+        .card:hover {
+            box-shadow: 10px 10px 8px #888888;
+            bottom: +2%
+        }
+
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #logo {
+            width: 50%;
+        }
+        .ico {
+            width: 15%;
+            float: inline-end;
+        }
+        .ico-sm {
+            width: 30%;
+            position: relative;
+            left: 30%
+        }
+        .pillNo {
+            font-weight:700;
+            font-size:larger;
+            position: relative;
+            left:50px;
+        }
+        #todate {
+            position:relative;
+            float: right;
+            display: inline;
+            left: 80%
+        }
+        .chard{
+            background-color:antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img class="rounded-pill" src="~/Images/Capemint logo.png" style="width: 15%" />Capemint</a>
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1 ">
+                    <li>@Html.ActionLink("Hotels", "Hotels", "Home", new { area = "" }, new { @class = "nav-link", @id = "nav-hotel"})</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link", @id = "nav-about" })</li>
+                    <li class="nav-item dropdown">
+                        @* @Html.ActionLink("Meals", "Order", "Meals", new { area = "" }, new { @class = "nav-link" })*@
+                        <a class="nav-link dropdown-toggle" id = "nav-meals" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Meals
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>@Html.ActionLink("Customer Order", "Order", "Meals", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Meal Agents Admin", "Caterer", "Meals", new { area = "" }, new { @class = "nav-link"})</li>
+                        </ul>
+                    </li>
+                            <li>@Html.ActionLink("Dashboard", "Index", "Admin", new { area = "" }, new { @class = "nav-link", @id = "nav-dash" })</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link", @id = "nav-contact" })</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Made by Onele</p>
+                </footer>
+            </div>
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+        </body>
+        </html>

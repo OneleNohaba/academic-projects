@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>Home</title>
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<Link rel="stylesheet" href="Resources/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+	<div class="topnav">
+            <div class="topnavText">My Portfolio Website</div>
+			<a href="about.html"><font size= "4.5vw" ><i class="fas fa-info-circle"></i></font> About Me</a>
+			<a href="contact.html"><font size= "4.5vw" ><i class="fas fa-id-badge"></i></font> Contact Me</a>
+			<a href="index.html"><font size= "4.5vw" ><i class="fas fa-home"></i></font><font size="4.8vw"><b>Home</b></font></a></div>
+	</div>
+<body>
+<div class="">
+	<div id="box-4">
+		<div class="pictureContainerText">
+			<h1>ONELE NOHABA</h1>
+			<p>
+				Name: Onele <br/>
+				Surname: Nohaba <br/>
+				Age: 21 <br/>
+				Address:<address>125B, Apartments On William, 180 Williams St, Brooklyn, 0181</address>
+				<br/>Phone: 0733591963 <br/>
+				Email: <a href="mailto:u21507628@tuks.co.za"> u21507628@tuks.co.za</a><br/>
+			</p>
+		</div>
+		<div class="pictureContainer">
+			<img id="Me" src="IMG_20230316_153659.jpg" alt="Profile Pictures" onmouseenter="changePicFunc()" onmouseleave="changePicFunc()">Hover Over the image</img>
+			
+		</div>
+		<div class="educationBox">
+			<h2>Education</h2>
+			<h3><center>Secondary</center></h3>
+			<pre class="tabSpace">	Name of school: 			Royal College</pre>
+			<pre class="tabSpace">	Highest grade passed:			Matric</pre>
+			<pre class="tabSpace">	Year graduated:				2020</pre>
+
+			<h3><center>Tertiary</center></h3>
+			<pre class="tabSpace">	Name of Institution:			University of Pretoria</pre>
+			<pre class="tabSpace">	Qualification:				BIT Information Systems</pre>
+			<pre class="tabSpace">	Year started:				2023</pre>
+			<pre class="tabSpace">	Qualification progress: 		in Progress</pre>
+			<h2>Skills and Competencies</h2>
+			<ul>
+				<li>Great Communication Skills (written and verbal)</li>
+				<li>Good Time Management,</li>
+				<li>Self-Motivation,</li>
+				<li>Self-Adaptation,</li>
+				<li>Comprehensive use of Internet as an integral part of solving any problem.</li>
+				<li>Confident in Microsoft Office Package and Google Suite,</li>
+				<li>Some other Computer skills: coding HTML, CSS, Python, C# (Windows Forms) and C++ (Arduino).</li>
+				<li>Backend Web skills: Rookie DB manegement (MySQL and PHP)</li>
+			</ul>
+		</div>
+	</div>
+		
+</div>
+<script src="Resources/script.js"></script>
+<footer class="w3-animate-bottom">
+	<div class="footer">
+	</ul>©Copyright 2023. All Rights Reserved.</div>
+	</div>
+</footer>		
+</body>
+<script>
+	//Index page functions
+let pic = document.getElementById("Me");
+let currentloc = pic.src;
+function changePicFunc(){
+    
+    if(pic.src == currentloc){
+        pic.src = "IMG_20230316_153652.jpg";
+    }
+    else{
+        pic.src = "IMG_20230316_153659.jpg";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,108 @@
+﻿@model CapeMint_Project.Models.Booking
+@{
+    ViewBag.Title = "BookingConfirmed";
+}
+
+<h2>Booking &#64 @ViewBag.hotel Confirmed</h2>
+<img src="~/Images/Hotels/@{@ViewBag.hotel}_Logo.png" style="float:right;width:100px" />
+<div>
+    <h4>Here are your Booking Details</h4>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <dl class="dl-horizontal">
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Id)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Id)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateMade)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateMade)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.email)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.hotelName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.hotelName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MealsReq)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MealsReq)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.roomType)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.roomType)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.roomPrice)
+                </dt>
+                <dd>
+                    R @Html.DisplayFor(model => model.roomPrice)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.guestsNo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.guestsNo)
+                </dd>
+            </dl>
+        </div>
+        <button class="btn btn-success" onclick="window.location.replace('/')">Go Home</button>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+    $(document).ready(function () {
+        $("#nav-hotel").prop("class", "nav-link active");
+    })
+    </script>
+}
