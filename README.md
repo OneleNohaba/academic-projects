@@ -62,7 +62,7 @@ A collection of academic projects completed during my university studies, showca
     - Extensions, add-ins, and prefabricated code libraries
 
 ### Year 3
-- **[Capstone Project](./year-3/capstone-project)** - The year-long final-year project: a volunteer and event management system with complementary features. The system supported EPI-USE Africa consultants and employees volunteering for events created by `erp.ngo`, the NGO branch of groupelephant.com (the parent company of EPI-USE).
+- **[Capstone Project](./Year%203/Capstone%20Project/)** - The year-long final-year project: a volunteer and event management system with complementary features. The system supported EPI-USE Africa consultants and employees volunteering for events created by [erp.ngo](https://erp.ngo), the NGO branch of [groupelephant.com](https://www.groupelephant.com) (the parent company of EPI-USE).
   - **Tech Stack**:
     - ASP .NET Core Web API (C#)
     - MS SQL
