@@ -123,7 +123,7 @@ A collection of academic projects completed during my university studies, showca
 
 ## About
 
-These projects represent my academic journey in software development, demonstrating progression in technical skills, problem-solving abilities, and software engineering best practices. Each project folder contains its own README with detailed information about implementation, challenges faced, and solutions developed.
+These projects represent my academic journey in software development, demonstrating progression in technical skills, problem-solving abilities, and software engineering best practices.
 
 ## Skills Demonstrated
 
